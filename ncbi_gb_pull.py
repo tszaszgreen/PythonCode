@@ -15,7 +15,7 @@ filename = "yourfile.txt"
 
 for i in range(length):
   species = species_list[i]
-  handle = Entrez.esearch(db="nucleotide", term= species + "[Orgn] AND " + gID + "[Gene]", idtype="acc")
+  handle = Entrez.esearch(db="nucleotide", term= species + "[Orgn] AND " + gID + "[Gene]", idtype="acc", retmax = 1)
   record = Entrez.read(handle)
 
   idlist = record["IdList"]
